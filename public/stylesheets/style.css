@@ -1,0 +1,57 @@
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+nav{
+  background-color: #2c2c64;
+}
+
+.page-footer{
+  background-color: #2c2c64;
+}
+
+h1{
+  font-weight: 600;
+  color: #2c2c64;
+}
+
+#cardHome{
+  margin-top: 50px;
+}
+
+blockquote{
+  margin-bottom: 20px;
+}
+
+.registrar_card_registrar h1{
+  color: #2c2c64;
+}
+
+#container_registrar{
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  z-index: 2;
+}
+#registrar_card{
+  align-items: center;
+  width: 800px;
+  padding: 10px;
+}
+
+#botoes_registrar{
+  display: flex;
+  justify-content: center;
+}
+#botoes_registrar .btn{
+  width: 150px;
+  text-align: center;
+  margin-left: 30px;
+
+}
