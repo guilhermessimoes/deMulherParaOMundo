@@ -53,5 +53,29 @@ blockquote{
   width: 150px;
   text-align: center;
   margin-left: 30px;
+}
 
+#noticia, span{
+  margin-left: 1px;
+}
+
+.tabs .tab a{
+  color:#2c2c64;
+}
+.tabs .tab a:hover{
+  color:#2c2c64;
+}
+.tabs .tab a:active{
+  color:#2c2c64;
+}
+.tabs .tab a:focus{
+  background-color: #bdb6e0;
+}
+
+.tabs .tab a:focus.active{
+  background-color: #bdb6e0;
+}
+
+.tabs .indicator{
+  background-color: #2c2c64;
 }

@@ -2,39 +2,31 @@
 <div class="container" id="container_registrar">
     <div class="card" id="registrar_card">
         <div class="row">
-            <form class="col s12" action="/login/registrarLogin" method="post">
+            <form class="col s12" action="/registrar" method="post">
               <div class="row center">
                 <h1 class="center">CRIAR CONTA</h1>
                 <span>Será enviado uma confirmação no e-mail cadastrado.</span>
               </div>
               <div class="row">
                 <div class="input-field col s12 center">
-                  <input id="nome" type="text" class="validate" name="nome">
+                  <input id="nome" type="text" class="validate" name="nome"> 
                   <label for="nome">Nome</label>
                 </div>              
               </div>
              
 
               <div class="row">
-                <div class="input-field col s6 center">
+                <div class="input-field col s12 center">
                   <input id="email" type="email" class="validate" name="email">
                   <label for="email">Email</label>
-                </div>
-                <div class="input-field col s6 center">
-                    <input id="confirmationEmail" type="email" class="validate" name="confirmationEmail">
-                    <label for="confirmationEmail">Confirmar Email</label>
-                  </div>
+                </div>                
               </div>
 
               <div class="row">
-                <div class="input-field col s6">
+                <div class="input-field col s12">
                   <input id="password" type="password" class="validate" name="password">
                   <label for="password">Senha</label>
-                </div>
-                <div class="input-field col s6">
-                    <input id="confirmationPassword" type="password" class="validate" name="confirmationPassword" >
-                    <label for="confirmationPassword">Confirmar Senha</label>
-                  </div>
+                </div>               
               </div>
               <div id="noticia" class="row">
                 <label>
