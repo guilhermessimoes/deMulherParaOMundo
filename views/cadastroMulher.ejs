@@ -1,3 +1,54 @@
 <%- include("./partials/header") %>
+<div class="container">
+    <div class="card">
+        <div class="row">
+            <form class="col s12" method="post">
+                <div class="row">
+                    <h1 class="center">
+                        Cadastro
+                    </h1>
+                </div>
+                <div class="input-field col s6">
+                    <input id="nome" type="text" class="validate">
+                    <label for="nome">Primeiro Nome</label>
+                </div>
+                <div class="input-field col s6">
+                    <input id="sobrenome" type="text" class="validate">
+                    <label for="sobrenome">Sobrenome</label>
+                </div>
+                 
+                <div class="input-field col s12">
+                    <form class="col s12">
+                        <div class="row">
+                            <div class="input-field col s12">
+                            <input id="descricao" type="text" data-length="120">
+                            <label for="descricao">Descrição</label>
+                            </div>
+                        </div>
+                    </form>
+              </div>
 
+            </form>
+
+            <form action="#">
+                <div class="file-field input-field col s12">
+                  <div class="waves-effect blue darken-1 btn">
+                    <span>Imagem</span>
+                    <input type="file" multiple>
+                  </div>
+                  <div class="file-path-wrapper">
+                    <input class="file-path validate" type="text" placeholder="Enviar imagens">
+                  </div>
+                </div>
+            </form>
+
+            <div class="col l8 offset-l2 s12 center">
+                <ul>
+                  <li><a class="waves-effect blue darken-1 btn" type="submit" href="#!">Enviar</a></li>
+                </ul>
+              </div>
+
+        </div>
+    </div>
+</div>
 <%- include("./partials/footer") %>
