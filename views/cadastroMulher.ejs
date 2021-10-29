@@ -21,34 +21,34 @@
                     <form class="col s12">
                         <div class="row">
                             <div class="input-field col s12">
-                            <input id="descricao" type="text" data-length="120">
-                            <label for="descricao">Descrição</label>
-                            </div>
+                                <textarea id="textarea2" class="materialize-textarea" data-length="120"></textarea>
+                                <label for="textarea2">Descrição</label>
+                              </div>
                         </div>
                     </form>
               </div>
 
             </form>
 
-            <form action="#">
-                <div class="file-field input-field col s12">
-                  <div class="waves-effect blue darken-1 btn">
-                    <span>Imagem</span>
-                    <input type="file" multiple>
-                  </div>
-                  <div class="file-path-wrapper">
-                    <input class="file-path validate" type="text" placeholder="Enviar imagens">
-                  </div>
-                </div>
-            </form>
-
-            <div class="col l8 offset-l2 s12 center">
-                <ul>
-                  <li><a class="waves-effect blue darken-1 btn" type="submit" href="#!">Enviar</a></li>
-                </ul>
-              </div>
-
         </div>
+        <div class="row">
+            <div class="file-field input-field">
+                <div class="waves-effect blue darken-1 btn">
+                <span>Imagem</span>
+                <input type="file">
+                </div>
+                <div class="file-path-wrapper">
+                <input class="file-path validate" type="text">
+                </div>
+            </div>
+        </div>
+
+        <div class="col l8 offset-l2 s12 center">
+            <ul>
+              <li><a class="waves-effect blue darken-1 btn" type="submit" href="#!">Enviar</a></li>
+            </ul>
+          </div>
+
     </div>
 </div>
 <%- include("./partials/footer") %>
