@@ -1,7 +1,7 @@
 const cadastroMulherController = {
-    viewForm: (req, res) => {      
-        res.render('cadastroMulher')
-    },
+    viewForm: (req, res) => {
+         res.render("contato")
+    }
 }
 
-module.exports = cadastroMulherController
+module.exports = cadastroMulherController;

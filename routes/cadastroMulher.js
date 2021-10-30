@@ -1,8 +1,8 @@
 var express = require('express');
 var router = express.Router();
-const cadastroMulherController = require('../controllers/cadastroMulherController');
+var cadastroMulherController = require('../controllers/casdastroMulherController');
 
 /* GET registrar page. */
-router.get('/',  cadastroMulherController.viewForm);
+router.get('/', cadastroMulherController.viewForm)
 
 module.exports = router;
