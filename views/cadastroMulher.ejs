@@ -1,3 +1,53 @@
 <%- include("./partials/header") %>
-
+<div class="container">
+    <div class="card">
+        <div class="row">
+            <form class="col s12" method="post">
+                <div class="row">
+                    <h1 class="center">
+                        Cadastro
+                    </h1>
+                </div>
+                <div class="row">
+                <div class="input-field col s12">
+                    <input id="nome" type="text" class="validate">
+                    <label for="nome">Primeiro Nome</label>
+                </div>
+                </div>
+                <div class="row">
+                <div class="input-field col s12">
+                    <input id="sobrenome" type="text" class="validate">
+                    <label for="sobrenome">Sobrenome</label>
+                </div>
+                </div>
+                 <div class="row">
+                <div class="input-field col s12">
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <textarea id="textarea2" class="materialize-textarea" data-length="120"></textarea>
+                            <label for="textarea2">Descrição</label>
+                            </div>
+                    </div>
+                </div>
+                </div>
+                
+                <div class="file-field input-field">
+                    <div class="btn">
+                      <span>File</span>
+                      <input type="file">
+                    </div>
+                    <div class="file-path-wrapper">
+                      <input class="file-path validate" type="text">
+                    </div>
+                </div>
+                <div class="col l8 offset-l2 s12 center">
+                    <ul>
+                      <li><a class="waves-effect blue darken-1 btn" type="submit" href="#!">Enviar</a></li>
+                    </ul>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</main>
 <%- include("./partials/footer") %>
