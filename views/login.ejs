@@ -1,3 +1,32 @@
 <%- include("./partials/header") %>
+<div class="container" id="container_registrar">
+    <div class="card" id="login_card">
+        <div class="row">
+            <form class="col s12" action="/login" method="POST">
+              <div class="row center">
+                <h1 class="center">ENTRAR</h1>
+                <span>Seja bem vindo ao nosso sistema</span>
+              </div>
+              <div class="row">
+                <div class="input-field col s12 center">
+                  <input id="email" type="email" class="validate" name="email">
+                  <label for="email">Email</label>
+                </div>                
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input id="password" type="password" class="validate" name="password">
+                  <label for="password">Senha</label>
+                </div>               
+              </div>
+              <div class="row" id="botoes_registrar">                  
+                <a href="/" class="waves-effect grey darken-1 btn">Voltar</a>                    
+                <button class="waves-effect blue darken-1 btn" type="submit">Confirmar</button>
+              </div>           
+            </form>
+          </div>
+    </div>
+</div>
+</main>
 
 <%- include("./partials/footer") %>

@@ -3,13 +3,27 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const session = require('express-session');
+const { flash } = require('express-flash-message');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var registrarRouter = require('./routes/registrar');
-var cadastroMulherRouter = require('./routes/cadastroMulher');
+var loginRouter = require('./routes/login');
 
 var app = express();
+
+// express-session
+app.use(
+  session({
+    secret: 'secret',
+    resave: false,
+    saveUninitialized: true,
+    cookie: {
+      maxAge: 1000 * 60 * 60 * 24 * 7},
+  })
+);
+
+app.use(flash({ sessionKeyName: 'flashMessage' }));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -23,8 +37,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/registrar', registrarRouter);
-app.use('/cadastroMulher', cadastroMulherRouter);
+app.use('/login', loginRouter);
 
 
 // catch 404 and forward to error handler

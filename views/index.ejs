@@ -25,188 +25,129 @@
           <h3> Conheça essas mulheres incríveis que nos inspiram todos os dias. </h3>
         </blockquote>
         <div class="row">
-          <a class="btn-floating right tooltipped btn-large waves-effect waves-light red" data-position="right" data-tooltip="Cadastrar novo artigo"><i class="material-icons">add</i></a>
+          <a class="btn-floating right tooltipped btn-large waves-effect waves-light deep-purple darken-4" data-position="right" data-tooltip="Cadastrar novo artigo" href="/cadastroMulher"><i class="material-icons">add</i></a>
         </div>
         <div class="row">
+          <%if (messages.length > 0) { %>
+            <div class="materialert success">
+                <div class="material-icons">check</div>
+                <%= messages %>
+            </div>
+          <% } %>
           <div class="col s12">
             <ul class="tabs">
-              <li class="tab col s3"><a class="active" href="#todos">Todos</a></li>
-              <li class="tab col s3"><a href="#test2">Ciencia</a></li>
-              <li class="tab col s3"><a href="#test3">Artes</a></li>
-              <li class="tab col s3"><a href="#test4">Social</a></li>
+              <li class="tab col s3"><a class="active purple-text" href="#todos">Todos</a></li>
+              <li class="tab col s3"><a class="purple-text" href="#ciencia">Ciência</a></li>
+              <li class="tab col s3"><a class="purple-text" href="#arte">Artes</a></li>
+              <li class="tab col s3"><a class="purple-text" href="#social">Social</a></li>
             </ul>
           </div>
-          <div id="todos" class="col s12">
+          <div id="todos" class="col s12">            
             <div class="row">
+            <% for(let i=0; i < mulheres.length; i++){ %>
               <div class="col s12 m6 l4">
                 <div class="card">
                   <div class="card-image">
-                    <img src="images/manal.png">                
+                    <img src="/data/uploads/<%= mulheres[i].imagem %>">                
                   </div>
                   <div class="card-content">
-                    <span class="card-title">Manal Al Sharif</span>
-                    <p>A cientista da computação começou sua jornada para quebrar as normas sociais quando se tornou a única mulher a trabalhar em segurança de TI na produtora de petróleo Saudi Aramco.</p>
+                    <span class="card-title"><%= mulheres[i].nome %></span>
+                    <p><%= mulheres[i].descricao %></p>
                   </div>
                   <div class="card-action">
-                    <a href="#">Saiba Mais</a>
+                    <a class="red-text" href="">Excluir</a>
+                    <a class="" href="">Editar</a>
+                    <a class=" modal-trigger" href="#modal<%= i %>">Visualizar</a>
                   </div>
                 </div>
+                 <!-- Modal Structure -->
+                <div id="modal<%= i %>" class="modal">
+                  <div class="modal-content">
+                    <h4><%= mulheres[i].nome %> </h4>
+                    <p><%= mulheres[i].descricao %> </p>
+                  </div>
+                  <div class="modal-footer">
+                    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Fechar</a>
+                  </div>
+                </div>  
               </div>
-              <div class="col s12 m6 l4">
-                <div class="card">
-                  <div class="card-image">
-                    <img src="images/jasmine.png">                
-                  </div>
-                  <div class="card-content">
-                    <span class="card-title">Jasmine Anteunis</span>
-                    <p>Após três anos na Beaux-Art na França e uma formação em engenharia da computação, Jasmine co-fundou a Recast.AI com Julien Blancher, Patrick Joubert e Paul Renvoisé.</p>
-                  </div>
-                  <div class="card-action">
-                    <a href="#">Saiba Mais</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col s12 m6 l4">
-                <div class="card">
-                  <div class="card-image">
-                    <img src="images/chantelle.png">                
-                  </div>
-                  <div class="card-content">
-                    <span class="card-title">Chantelle Bell</span>
-                    <p>Formada em Biociências em Cambridge. Desenvolveu um dispositivo semelhante a um teste de gravidez que permite que as mulheres façam o teste de câncer cervical em casa..</p>
-                  </div>
-                  <div class="card-action">
-                    <a href="#">Saiba Mais</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col s12 m6 l4">
-                <div class="card">
-                  <div class="card-image">
-                    <img src="images/elina.png">                
-                  </div>
-                  <div class="card-content">
-                    <span class="card-title">Elina Berglund</span>
-                    <p>I am a very simple card. I am good at containing small bits of information.
-                    I am convenient because I require little markup to use effectively.</p>
-                  </div>
-                  <div class="card-action">
-                    <a href="#">Saiba Mais</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col s12 m6 l4">
-                <div class="card">
-                  <div class="card-image">
-                    <img src="images/sue.png">                
-                  </div>
-                  <div class="card-content">
-                    <span class="card-title">Sue Black</span>
-                    <p>I am a very simple card. I am good at containing small bits of information.
-                    I am convenient because I require little markup to use effectively.</p>
-                  </div>
-                  <div class="card-action">
-                    <a href="#">Saiba Mais</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col s12 m6 l4">
-                <div class="card">
-                  <div class="card-image">
-                    <img src="images/danah.png">                
-                  </div>
-                  <div class="card-content">
-                    <span class="card-title">Danah Boyd</span>
-                    <p>I am a very simple card. I am good at containing small bits of information.
-                    I am convenient because I require little markup to use effectively.</p>
-                  </div>
-                  <div class="card-action">
-                    <a href="#">Saiba Mais</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col s12 m6 l4">
-                <div class="card">
-                  <div class="card-image">
-                    <img src="images/joy.png">                
-                  </div>
-                  <div class="card-content">
-                    <span class="card-title">Joy Buolamwini</span>
-                    <p>I am a very simple card. I am good at containing small bits of information.
-                    I am convenient because I require little markup to use effectively.</p>
-                  </div>
-                  <div class="card-action">
-                    <a href="#">Saiba Mais</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col s12 m6 l4">
-                <div class="card">
-                  <div class="card-image">
-                    <img src="images/eileen.png">                
-                  </div>
-                  <div class="card-content">
-                    <span class="card-title">Eileen Burbidge</span>
-                    <p>I am a very simple card. I am good at containing small bits of information.
-                    I am convenient because I require little markup to use effectively.</p>
-                  </div>
-                  <div class="card-action">
-                    <a href="#">Saiba Mais</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col s12 m6 l4">
-                <div class="card">
-                  <div class="card-image">
-                    <img src="images/ursula.png">                
-                  </div>
-                  <div class="card-content">
-                    <span class="card-title">Ursula Burns</span>
-                    <p>I am a very simple card. I am good at containing small bits of information.
-                    I am convenient because I require little markup to use effectively.</p>
-                  </div>
-                  <div class="card-action">
-                    <a href="#">Saiba Mais</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col s12 m6 l4">
-                <div class="card">
-                  <div class="card-image">
-                    <img src="images/emmanuelle.png">                
-                  </div>
-                  <div class="card-content">
-                    <span class="card-title">Emmanuelle Charpentier</span>
-                    <p>I am a very simple card. I am good at containing small bits of information.
-                    I am convenient because I require little markup to use effectively.</p>
-                  </div>
-                  <div class="card-action">
-                    <a href="#">Saiba Mais</a>
-                  </div>
-                </div>
-              </div>
+            <% } %>
             </div>
           </div>
-          <div id="test2" class="col s12">Test 2</div>
-          <div id="test3" class="col s12">Test 3</div>
-          <div id="test4" class="col s12">Test 4</div>
+          <div id="ciencia" class="col s12">
+            <div class="row">
+              <% for(let i=0; i < mulheres.length; i++){ %>
+                <% if(mulheres[i].genero == "ciencia"){ %>
+                  <div class="col s12 m6 l4">
+                    <div class="card">
+                      <div class="card-image">
+                        <img src= "<%= mulheres[i].imagem %>">                
+                      </div>
+                      <div class="card-content">
+                        <span class="card-title"><%= mulheres[i].nome %></span>
+                        <p><%= mulheres[i].descricao%></p>
+                      </div>
+                      <div class="card-action">
+                        <a class="" href="">Excluir</a>
+                        <a class="" href="">Editar</a>
+                        <a class="modal-trigger" href="#modal<%= i %>">Saiba Mais</a>
+                      </div>
+                  </div>
+                  </div>
+                <% } %>
+              <% } %>
+            </div>
+          </div>
+          <div id="arte" class="col s12">
+            <div class="row">
+              <% for(let i=0; i < mulheres.length; i++){ %>
+                <% if(mulheres[i].genero == "arte"){ %>
+                  <div class="col s12 m6 l4">
+                    <div class="card">
+                      <div class="card-image ">
+                        <img src=<%= mulheres[i].imagem %>>             
+                      </div>
+                      <div class="card-content">
+                        <span class="card-title"><%= mulheres[i].nome %> </span>
+                        <p><%= mulheres[i].descricao %></p>
+                      </div>
+                      <div class="card-action">
+                        <a class="" href="">Excluir</a>
+                        <a class="" href="">Editar</a>
+                        <a class="modal-trigger" href="#modal<%= i %>">Saiba Mais</a>
+                      </div>
+                    </div>              
+                  </div>
+                <% } %>
+              <% } %>
+            </div>
+          </div>
+          <div id="social" class="col s12">
+            <div class="row">
+              <% for(let i=0; i < mulheres.length; i++){ %>
+                <% if(mulheres[i].genero == "social"){ %>
+                  <div class="col s12 m6 l4">
+                    <div class="card">
+                      <div class="card-image ">
+                        <img src=<%= mulheres[i].imagem %>>             
+                      </div>
+                      <div class="card-content">
+                        <span class="card-title"><%= mulheres[i].nome %> </span>
+                        <p><%= mulheres[i].descricao %></p>
+                      </div>
+                      <div class="card-action">
+                        <a class="" href="">Editar</a>
+                        <a class="" href="">Excluir</a>
+                        <a class="modal-trigger" href="#modal<%= i %>">Saiba Mais</a>
+                      </div>
+                    </div>              
+                  </div>
+                <% } %>
+              <% } %>
+            </div>
+          </div>
         </div>
-        
       </div>
-      
-      <!-- Modal Trigger -->
-      <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
-
-      <!-- Modal Structure -->
-      <div id="modal1" class="modal">
-        <div class="modal-content">
-          <h4>Modal Header</h4>
-          <p>A bunch of text</p>
-        </div>
-        <div class="modal-footer">
-          <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
-        </div>
-      </div>   
     </main>
 <%- include("./partials/footer") %>
    
