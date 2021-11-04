@@ -35,6 +35,11 @@ blockquote{
 
 .card-content p{
   word-wrap: break-word;
+  
+}
+.card-reveal{
+  height: 30px;
+  height: 10px;
 }
 
 #container_registrar{

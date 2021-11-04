@@ -2,7 +2,7 @@
 <div class="container" id="container_registrar">
     <div class="card center" id="cadastroMulheres">
         <div class="row">
-            <form class="col s12" method="POST" action="/cadastroMulher" enctype="multipart/form-data">
+            <form class="col s12" method="POST" action="<%= formAction %>" enctype="multipart/form-data">
                 <div class="row">                   
                     <% if(typeof alert != 'undefined'){ %>
                         <% alert.forEach(function(error){ %>
@@ -19,33 +19,28 @@
                 </div>
                 <div class="row">
                 <div class="input-field col s6">
-                    <input id="nome" type="text" class="validate" name="nome">
+                    <input value="<%= mulher.nome %>" id="nome" type="text" class="validate" name="nome">
                     <label for="nome">Primeiro Nome</label>
                 </div>
                 <div class="input-field col s6">
-                    <input id="sobrenome" type="text" class="validate" name="sobrenome">
+                    <input value="<%= mulher.sobrenome %>" id="sobrenome" type="text" class="validate" name="sobrenome">
                     <label for="sobrenome">Sobrenome</label>
                 </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s6">
-                        <input id="email" type="email" class="validate" name="email">
-                        <label for="email">E-mail</label>
+                        <input value="<%= mulher.link %>" id="link" type="text" class="validate" name="link">
+                        <label for="link">Insira o link do artigo</label>
                     </div>
                     <div class="input-field col s6">
-                        <input id="pais" type="text" class="validate" name="pais">
+                        <input value="<%= mulher.pais %>" id="pais" type="text" class="validate" name="pais">
                         <label for="pais">Insira o pais de origem</label>
                     </div>
                 </div>
-                <div class="row">                   
-                    <div class="input-field col s12">
-                        <input id="link" type="text" class="validate" name="link">
-                        <label for="link">Insira o link do artigo</label>
-                    </div>
-                </div>
+
                 <div class="row">
                     <div class="input-field col s6">
-                        <select id="genero" name="genero">
+                        <select  id="genero" name="genero">
                             <option value="" disabled selected>Selecione um Genero</option>
                             <option value="ciencia">Ciência</option>
                             <option value="arte">Artes</option>
@@ -53,7 +48,7 @@
                           </select>
                     </div>
                     <div class="input-field col s6">
-                        <input id="data_nascimento" type="date" class="validate" name="data_nascimento">
+                        <input value="<%= mulher.data_nascimento %>" id="data_nascimento" type="date" class="validate" name="data_nascimento">
                         <label for="data_nascimento">Data de nascimento</label>
                     </div>
                 </div>
@@ -61,7 +56,7 @@
                 <div class="input-field col s12">
                     <div class="row">
                         <div class="input-field col s12">
-                            <textarea id="descricao" class="materialize-textarea" data-length="120" name="descricao"></textarea>
+                            <textarea value="<%= mulher.descricao %>" id="textarea2" class="materialize-textarea" data-length="400" name="descricao"></textarea>
                             <label for="descricao">Descrição</label>
                         </div>
                     </div>
@@ -79,7 +74,7 @@
                 </div>
                 <div class="col l8 offset-l2 s12 center" id="botoes_registrar">
                     <a href="/" class="waves-effect teal lighten-2  btn">Voltar</a>
-                    <button type="submit" class="waves-effect blue darken-1 btn"> Confirmar</button>
+                    <button type="submit" class="waves-effect blue darken-1 btn"> <%= buttonMessage %></button>
                 </div>
             </form>
         </div>

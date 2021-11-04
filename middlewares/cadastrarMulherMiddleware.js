@@ -7,7 +7,7 @@ const cadastrarMulherValidator = [
     check("genero").notEmpty().withMessage("O campo genero é obrigatório."),
     check("pais").notEmpty().withMessage("O campo pais é obrigatório."),
     check("imagem").notEmpty().withMessage("O campo imagem é obrigatório."),
-    check("email").notEmpty().withMessage("O campo imagem é obrigatório."),
+   // check("email").notEmpty().withMessage("O campo imagem é obrigatório."),
 ]
 
 module.exports = {cadastrarMulherValidator}

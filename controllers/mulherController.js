@@ -2,11 +2,7 @@ const {validationResult} = require("express-validator");
 const db = require("../models")
 
 const mulherController = {
-    viewForm: (req, res)=>{      
-         res.render("cadastroMulher")
-    },
-
-    listarMulheres: async function(req, res){
+    listarMulheres: async (req, res)=>{
         const cadastroMulherRows = await db.Mulher.findAll();
         const messages = await req.consumeFlash('success')
         console.log(messages)
@@ -16,7 +12,11 @@ const mulherController = {
          })
     },
 
-    cadastrarMulher: async function(req, res){
+    cadastrarMulher: (req,res) => {
+        res.render("cadastroMulher", {formAction:"/cadastroMulher", buttonMessage: "Cadastrar", mulher:{}})
+    },
+
+    acaoCadastrarMulher: async (req, res)=>{
         let listaDeErros = validationResult(req)
         if(!listaDeErros.isEmpty()){
             const alert = listaDeErros.array()
@@ -50,15 +50,43 @@ const mulherController = {
         res.redirect("/")
     },
 
-    editar: async function (req, res) {
-        const idMulher = req.params.id;
-        const mulherEncontrada = await db.Usuario.findByPk(idMulher)
-        const formUrl = `/editar/${idMulher}`
+    editar: async (req, res)=> {
+        const mulherEncontrada = await db.Mulher.findByPk(req.params.id);
+
+        res.render("cadastroMulher", {formAction:`/alterar/${req.params.id}`, buttonMessage: "Editar", mulher: mulherEncontrada });
+
     },
 
-    excluir: async function (req, res) {
+    acaoEditar: async (req,res) =>{
+        /*let listaDeErros = validationResult(req)
+        if(!listaDeErros.isEmpty()){
+            const alert = listaDeErros.array()
+            console.log(alert)
+            res.render("cadastroMulher", {alert: alert})
+            return            
+        }*/
+
+        const mulherObj = { 
+            nome: req.body.nome,
+            sobrenome: req.body.sobrenome,
+            pais: req.body.pais,
+            genero: req.body.genero,
+            link: req.body.link,
+            descricao: req.body.descricao,
+            data_nascimento: req.body.data_nascimento
+        }
+
+        await db.Mulher.update(mulherObj, {where: {id: req.params.id}})
+
+        await req.flash('success', "Registro editado com sucesso")
+
+        res.redirect("/")
+    },
+
+    excluir: async (req, res)=> {
         const idMulher = req.params.id;
         
+        await req.flash('success', "Registro excluido com sucesso")
         await db.Mulher.destroy({where: {id: idMulher}})
         res.redirect("/")
     }

@@ -37,9 +37,12 @@ const registrarController = {
             res.render("registrar", {alert: alert})
         }
 
+        const salt = bcrypt.genSaltSync(10);
+        const senhaCriptografada = bcrypt.hashSync(req.body.senha, salt);
+
         const nomeUsuario = req.body.nome
         const emailUsuario = req.body.email
-        const senhaUsuario = req.body.senha
+        const senhaUsuario = senhaCriptografada
 
         console.log(req)
 
