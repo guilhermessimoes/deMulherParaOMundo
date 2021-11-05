@@ -40,7 +40,7 @@
            <div id="modal<%= i %>" class="modal">
             <div class="modal-content">
               <h4> <%= mulheres[i].nome + " " %><%= mulheres[i].sobrenome %> </h4>
-              <p><b>Data de nascimento: </b><%= mulheres[i].data_nascimento %></p>
+              <p><b>Data de nascimento: </b><%= (`${mulheres[i].data_nascimento.getDate()}/${mulheres[i].data_nascimento.getMonth()+1}/${mulheres[i].data_nascimento.getFullYear()}`) %></p>
               <p><b>Categoria: </b> <%= mulheres[i].genero %> </p>
               <p><b>País de origem: </b> <%= mulheres[i].pais %> </p>
               <p><b>Descriçao: </b> <%= mulheres[i].descricao %> </p>                    
