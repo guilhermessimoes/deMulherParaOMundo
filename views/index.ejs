@@ -62,11 +62,11 @@
                   <div class="card-content">
                   
                     <span class="card-title activator grey-text text-darken-4"><%= mulheres[i].nome + " " + mulheres[i].sobrenome %>
-                      <ul id="dropdown<%= i %>" class="dropdown-content">
+                      <ul id="dropdown<%= mulheres[i].id %>" class="dropdown-content">
                         <li><a class="red-text" href="/excluir/<%= mulheres[i].id %>">Excluir<span class=""></span></a></li>
                         <li><a class="green-text" href="/alterar/<%= mulheres[i].id %>">Editar<span class=""></span></a></li>                        
                       </ul>
-                      <a ><i class="material-icons  dropdown-trigger right grey-text text-darken-4" data-target="dropdown<%= i %>">more_vert</i></a>
+                      <a ><i class="material-icons  dropdown-trigger right grey-text text-darken-4" data-target="dropdown<%= mulheres[i].id %>">more_vert</i></a>
                     </span>
                     
                     <span maxlength="150"><%= mulheres[i].descricao %></span>
