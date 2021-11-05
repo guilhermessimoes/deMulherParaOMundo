@@ -15,15 +15,24 @@
   </head>
   <body> 
     <main>
-      <div class="navbar-fixed">
-        <nav>
-            <div class="nav-wrapper">
-              <a href="/" class="brand-logo center"><img src="/images/logo11.png" alt=""></a>
-              <ul id="nav-mobile" class="left hide-on-med-and-down">
-                <li><a href="/">Inicio</a></li>
-                <li><a href="/login/registrar">Registrar-se</a></li>
-                <li><a href="/login">Login</a></li>
-              </ul>
-            </div>
-        </nav>
+      <div>
+        <div class="navbar-fixed">
+          <nav>
+              <div class="nav-wrapper">
+                <a href="/" class="brand-logo center"><img src="/images/logo11.png" alt=""></a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                <ul id="nav-mobile" class="left hide-on-med-and-down">
+                  <li><a href="/">Inicio</a></li>
+                  <li><a href="/login/registrar">Registrar-se</a></li>
+                  <li><a href="/login">Login</a></li>
+                </ul>
+              </div>
+          </nav>
+        </div>
+        <ul class="sidenav" id="mobile-demo">
+          <li><a href="/">Inicio</a></li>
+          <li><a href="/login/registrar">Registrar-se</a></li>
+          <li><a href="/login">Login</a></li>
+        </ul>   
       </div>
+     

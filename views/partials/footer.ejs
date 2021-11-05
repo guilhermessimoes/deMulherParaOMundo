@@ -36,17 +36,17 @@
       $('.tooltipped').tooltip();
       $('.slider').slider();
       $('input#input_text, textarea#textarea2').characterCounter();
-    });
-    $('.carousel.carousel-slider').carousel({
+      $('.dropdown-trigger').dropdown();
+      $('.fixed-action-btn').floatingActionButton();  
+      $('.carousel.carousel-slider').carousel({
       fullWidth: true,
-      indicators: true
+      indicators: true,
+      duration: 200,
+      noWrap: false     
+    });      
     });
-    $(document).ready(function(){
-      $('.fixed-action-btn').floatingActionButton();
-    });
-
-    $('.dropdown-trigger').dropdown();
-      
+    
+        
     </script>
 </main>
 </body>

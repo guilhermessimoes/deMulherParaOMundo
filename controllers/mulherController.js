@@ -2,8 +2,8 @@ const {validationResult} = require("express-validator");
 const db = require("../models")
 
 const mulherController = {
-    listarMulheres: async (req, res)=>{
-        const cadastroMulherRows = await db.Mulher.findAll();
+    listarMulheres: async (req, res)=>{        
+        const cadastroMulherRows = await db.Mulher.findAll();   
         const messages = await req.consumeFlash('success')
         console.log(messages)
          res.render("index", {
@@ -53,18 +53,30 @@ const mulherController = {
     editar: async (req, res)=> {
         const mulherEncontrada = await db.Mulher.findByPk(req.params.id);
 
-        res.render("cadastroMulher", {formAction:`/alterar/${req.params.id}`, buttonMessage: "Editar", mulher: mulherEncontrada });
+        mulherEncontrada.dataFormatada = `${mulherEncontrada.data_nascimento.getFullYear()}-${('0' + mulherEncontrada.data_nascimento.getMonth() + 1).slice(-2)}-${('0' + (mulherEncontrada.data_nascimento.getDate())).slice(-2)}`;
+        console.log(mulherEncontrada);
+
+        res.render("cadastroMulher", {
+            formAction:`/alterar/${req.params.id}`,
+            buttonMessage: "Salvar",
+            mulher: mulherEncontrada
+        });
 
     },
 
     acaoEditar: async (req,res) =>{
-        /*let listaDeErros = validationResult(req)
+        let listaDeErros = validationResult(req)
         if(!listaDeErros.isEmpty()){
+            const mulherEncontrada = await db.Mulher.findByPk(req.params.id);
+            mulherEncontrada.dataFormatada = `${mulherEncontrada.data_nascimento.getFullYear()}-${('0' + mulherEncontrada.data_nascimento.getMonth() + 1).slice(-2)}-${('0' + (mulherEncontrada.data_nascimento.getDate())).slice(-2)}`;
+
             const alert = listaDeErros.array()
             console.log(alert)
-            res.render("cadastroMulher", {alert: alert})
+
+            res.render("cadastroMulher", {alert: alert, formAction:`/alterar/${req.params.id}`,
+            buttonMessage: "Salvar", mulher: mulherEncontrada})
             return            
-        }*/
+        }
 
         const mulherObj = { 
             nome: req.body.nome,

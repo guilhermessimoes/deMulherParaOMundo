@@ -1,23 +1,16 @@
 <%- include("./partials/header") %>
-      <div class="carousel carousel-slider center">
-        <div class="carousel-fixed-item center">
-          <a class="btn waves-effect white grey-text darken-text-2">saiba mais</a>
+      <div class="carousel carousel-slider center">       
+        <div class="carousel-item" href="#one!">
+          <img src="/images/crisJunqueira.png" alt="">
         </div>
-        <div class="carousel-item grey lighten-2 black-text" href="#one!">
-          
+        <div class="carousel-item" href="#two!">
+          <img src="/images/marieCurie.png" alt="">
+        </div>
+        <div class="carousel-item" href="#three!">
+          <img src="/images/rosaParks.png" alt="">
+        </div>
+        <div class="carousel-item" href="#four!">
           <img src="/images/modelo3.png" alt="">
-        </div>
-        <div class="carousel-item amber white-text" href="#two!">
-          <h2>Second Panel</h2>
-          <p class="white-text">This is your second panel</p>
-        </div>
-        <div class="carousel-item green white-text" href="#three!">
-          <h2>Third Panel</h2>
-          <p class="white-text">This is your third panel</p>
-        </div>
-        <div class="carousel-item blue white-text" href="#four!">
-          <h2>Fourth Panel</h2>
-          <p class="white-text">This is your fourth panel</p>
         </div>
       </div>
       <div class="container" id="cardHome">
@@ -47,12 +40,11 @@
            <div id="modal<%= i %>" class="modal">
             <div class="modal-content">
               <h4> <%= mulheres[i].nome + " " %><%= mulheres[i].sobrenome %> </h4>
-              <p><b>Data de nascimento:</b> <a href=""><%= mulheres[i].data_nascimento %></a></p>
-              <p><b>Sobrenome:</b> <%= mulheres[i].sobrenome %> <p>
-              <p><b>Gênero:</b> <%= mulheres[i].genero %> </p>
+              <p><b>Data de nascimento: </b><%= mulheres[i].data_nascimento %></p>
+              <p><b>Categoria: </b> <%= mulheres[i].genero %> </p>
               <p><b>País de origem: </b> <%= mulheres[i].pais %> </p>
-              <p><b>Descriçao:</b> <%= mulheres[i].descricao %> </p>                    
-              <p><b>Link do artigo:</b> <a href=""><%= mulheres[i].link %></a></p>
+              <p><b>Descriçao: </b> <%= mulheres[i].descricao %> </p>                    
+              <p><b>Link do artigo: </b> <a href=""><%= mulheres[i].link %></a></p>
             </div>
             <div class="modal-footer">
               <a href="#!" class="modal-close waves-effect waves-green btn-flat">Fechar</a>
@@ -70,17 +62,17 @@
                   <div class="card-content">
                   
                     <span class="card-title activator grey-text text-darken-4"><%= mulheres[i].nome + " " + mulheres[i].sobrenome %>
-                      <ul id="dropdown2" class="dropdown-content">
-                        <li><a href="/excluir/<%= mulheres[i].id %>">Excluir<span class=""></span></a></li>
-                        <li><a href="/alterar/<%= mulheres[i].id %>">Editar<span class=""></span></a></li>                        
+                      <ul id="dropdown<%= i %>" class="dropdown-content">
+                        <li><a class="red-text" href="/excluir/<%= mulheres[i].id %>">Excluir<span class=""></span></a></li>
+                        <li><a class="green-text" href="/alterar/<%= mulheres[i].id %>">Editar<span class=""></span></a></li>                        
                       </ul>
-                      <a ><i class="material-icons  dropdown-trigger right grey-text text-darken-4" data-target="dropdown2">more_vert</i></a>
+                      <a ><i class="material-icons  dropdown-trigger right grey-text text-darken-4" data-target="dropdown<%= i %>">more_vert</i></a>
                     </span>
                     
                     <span maxlength="150"><%= mulheres[i].descricao %></span>
                   </div>
                   <div class="card-action">                  
-                    <a class="modal-trigger purple-text right" href="#modal<%= i %>">Visualizar</a>                    
+                    <a class="modal-trigger purple-text right" href="#modal<%= i %>">Detalhes</a>                    
                   </div>                  
                 </div>
                   
@@ -99,16 +91,16 @@
                         </div>
                         <div class="card-content">
                           <span class="card-title activator grey-text text-darken-4"><%= mulheres[i].nome + " " + mulheres[i].sobrenome %>
-                            <ul id="dropdown<%= mulheres[i].id %>" class="dropdown-content">
-                              <li><a href="/excluir/<%= mulheres[i].id %>">Excluir<span class=""></span></a></li>
-                              <li><a href="/alterar/<%= mulheres[i].id %>">Editar<span class=""></span></a></li>                        
+                            <ul id="dropdown<%= i %>" class="dropdown-content">
+                              <li><a class="red-text" href="/excluir/<%= mulheres[i].id %>">Excluir<span class=""></span></a></li>
+                              <li><a class="green-text" href="/alterar/<%= mulheres[i].id %>">Editar<span class=""></span></a></li>                        
                             </ul>
-                            <a ><i class="material-icons  dropdown-trigger right grey-text text-darken-4" data-target="dropdown<%= mulheres[i].id %>">more_vert</i></a>
+                            <a ><i class="material-icons  dropdown-trigger right grey-text text-darken-4" data-target="dropdown<%= i %>">more_vert</i></a>
                           </span>
                           <p><%= mulheres[i].descricao%></p>
                         </div>
                         <div class="card-action">
-                          <a class="modal-trigger purple-text right" href="#modal<%= i %>">Visualizar</a>
+                          <a class="modal-trigger purple-text right" href="#modal<%= i %>">Detalhes</a>
                         </div>
                     </div>
                   </div>
@@ -127,16 +119,16 @@
                       </div>
                       <div class="card-content">
                         <span class="card-title activator grey-text text-darken-4"><%= mulheres[i].nome + " " + mulheres[i].sobrenome %>
-                          <ul id="dropdown<%= mulheres[i].id %>" class="dropdown-content">
-                            <li><a href="/excluir/<%= mulheres[i].id %>">Excluir<span class=""></span></a></li>
-                            <li><a href="/alterar/<%= mulheres[i].id %>">Editar<span class=""></span></a></li>                        
+                          <ul id="dropdown<%= i %>" class="dropdown-content">
+                            <li><a class="red-text" href="/excluir/<%= mulheres[i].id %>">Excluir<span class=""></span></a></li>
+                            <li><a class="green-text" href="/alterar/<%= mulheres[i].id %>">Editar<span class=""></span></a></li>                        
                           </ul>
-                          <a ><i class="material-icons  dropdown-trigger right grey-text text-darken-4" data-target="dropdown<%= mulheres[i].id %>">more_vert</i></a>
+                          <a ><i class="material-icons  dropdown-trigger right grey-text text-darken-4" data-target="dropdown<%= i %>">more_vert</i></a>
                         </span>
                         <p><%= mulheres[i].descricao %></p>
                       </div>
                       <div class="card-action">
-                        <a class=" modal-trigger purple-text right" href="#modal<%= i %>">Visualizar</a>
+                        <a class=" modal-trigger purple-text right" href="#modal<%= i %>">Detalhes</a>
                       </div>
                     </div>              
                   </div>
@@ -155,16 +147,16 @@
                       </div>
                       <div class="card-content">
                         <span class="card-title activator grey-text text-darken-4"><%= mulheres[i].nome + " " + mulheres[i].sobrenome %>
-                          <ul id="dropdown<%= mulheres[i].id %>" class="dropdown-content">
-                            <li><a href="/excluir/<%= mulheres[i].id %>">Excluir<span class=""></span></a></li>
-                            <li><a href="/alterar/<%= mulheres[i].id %>">Editar<span class=""></span></a></li>                        
+                          <ul id="dropdown<%= i %>" class="dropdown-content">
+                            <li><a class="red-text" href="/excluir/<%= mulheres[i].id %>">Excluir  <span class=""></span></a></li>
+                            <li><a class="green-text" href="/alterar/<%= mulheres[i].id %>">Editar <span class=""></span></a></li>                        
                           </ul>
-                          <a ><i class="material-icons  dropdown-trigger right grey-text text-darken-4" data-target="dropdown<%= mulheres[i].id %>">more_vert</i></a>
+                          <a ><i class="material-icons  dropdown-trigger right grey-text text-darken-4" data-target="dropdown<%= i %>">more_vert</i></a>
                         </span>
                         <p><%= mulheres[i].descricao %></p>
                       </div>
                       <div class="card-action">
-                        <a class=" modal-trigger purple-text right" href="#modal<%= i %>">Visualizar</a>
+                        <a class=" modal-trigger purple-text right" href="#modal<%= i %>">Detalhes</a>
                       </div>
                     </div>              
                   </div>
