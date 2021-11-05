@@ -5,10 +5,10 @@ const mulherController = {
     listarMulheres: async (req, res)=>{        
         const cadastroMulherRows = await db.Mulher.findAll();   
         const messages = await req.consumeFlash('success')
-        console.log(messages)
+        
          res.render("index", {
              mulheres: cadastroMulherRows,
-             messages: messages
+             messages: messages,
          })
     },
 
@@ -21,7 +21,7 @@ const mulherController = {
         if(!listaDeErros.isEmpty()){
             const alert = listaDeErros.array()
             console.log(alert)
-            res.render("cadastroMulher", {alert: alert})
+            res.render("cadastroMulher", {alert: alert, buttonMessage: "Cadastrar", formAction:"/cadastroMulher", mulher:{}})
             return
             
         }
